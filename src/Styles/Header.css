@@ -7,6 +7,7 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     z-index: 11;
   }
   .logo-link{
@@ -33,7 +34,7 @@
   }
   
   .control img {
-    width: 5rem;
+    width: 4rem;
     
   }
   

@@ -91,7 +91,7 @@ const VideoPage = () => {
           <ReactPlayer
             url={videoUrl}
             width="70vw"
-            height="700px"
+            height="600px"
             controls
             playing
             loop
