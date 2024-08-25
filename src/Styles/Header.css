@@ -9,7 +9,10 @@
     justify-content: space-between;
     z-index: 11;
   }
-  
+  .logo-link{
+    text-decoration: none; /* remove underline */
+  color: inherit;
+  }
   .logo {
     width: 100%;
     color: #fff;

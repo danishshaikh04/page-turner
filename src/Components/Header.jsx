@@ -10,7 +10,7 @@ function Header({ title, showMenu, showMute, showExit }) {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">{title}</Link>
+        <Link  to="/" className="logo-link">{title}</Link>
       </div>
       <div className="header-controls">
         {showMenu && (
