@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 import './App.css';
+// import { useState } from 'react';
+import HomePage from './Pages/HomePage';
+import MenuPage from './Pages/MenuPage';
+import PolicyPage from './Pages/PolicyPage';
+import IntroPage from './Pages/IntroPage';
+import VideoPage from './Pages/VideoPage';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+// import 'flipping-pages/dist/style.css';
+// import PageFlipWrapper from './Components/PageFlipWrapper';
 
 function App() {
+  // const pages = [HomePage, IntroPage, MenuPage, PolicyPage, VideoPage];
+  // const [selected, setSelected] = useState(0);
+
+  //   const back = () => {
+  //       setSelected(selected => Math.max(selected - 1, 0));
+  //   };
+
+  //   const next = () => {
+  //       setSelected(selected => Math.min(selected + 1, 2));
+  //   };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+      <div className="app">
+        <Header />
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/intro" element={<IntroPage />} />
+            <Route path="/menu" element={<MenuPage />} />
+            <Route path="/video/:videoId" element={<VideoPage />} />
+            <Route path="/policy" element={<PolicyPage />} />
+          </Routes>
+            
+            {/* <PageFlipWrapper pages={pages} /> */}
+        </main>
+      </div>
+    
     </div>
   );
 }
