@@ -13,7 +13,7 @@ const IntroPage = () => {
   const navigate = useNavigate();
 
   const clickHandler = () => {
-    navigate('/video'); 
+    navigate('/menu'); 
   };
   return (
     <div>
