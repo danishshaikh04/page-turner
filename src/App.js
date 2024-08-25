@@ -8,9 +8,9 @@ import PolicyPage from './Pages/PolicyPage';
 import IntroPage from './Pages/IntroPage';
 import VideoPage from './Pages/VideoPage';
 import Header from './Components/Header';
-import Footer from './Components/Footer';
+// import Footer from './Components/Footer';
 import 'flipping-pages/dist/style.css';
-import PageFlipWrapper from './Components/PageFlipWrapper';
+// import PageFlipWrapper from './Components/PageFlipWrapper';
 
 function App() {
   const pages = [HomePage, IntroPage, MenuPage, VideoPage, PolicyPage ];
@@ -29,15 +29,15 @@ function App() {
       <div className="app">
         <Header />
         <main className="main">
-          {/* <Routes>
+          <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/intro" element={<IntroPage />} />
             <Route path="/menu" element={<MenuPage />} />
             <Route path="/video/:videoId" element={<VideoPage />} />
             <Route path="/policy" element={<PolicyPage />} />
-          </Routes> */}
+          </Routes>
             
-            <PageFlipWrapper pages={pages} />
+            {/* <PageFlipWrapper pages={pages} /> */}
         </main>
       </div>
     

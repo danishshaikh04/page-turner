@@ -25,21 +25,21 @@ const VideoPage = () => {
   // Determine the title based on videoId
   const videoTitle = videoTitles[videoId] || defaultTitle;
   
-  // const videoUrls = {
-  //   "introduction-to-cyber-safety": "https://www.youtube.com/watch?v=kmJlnUfMd7I",
+  const videoUrls = {
+    "introduction-to-cyber-safety": "https://www.youtube.com/watch?v=kmJlnUfMd7I",
 
-  //   "passwords": "https://www.youtube.com/watch?v=xUp5S0nBnfc", 
+    "passwords": "https://www.youtube.com/watch?v=xUp5S0nBnfc", 
 
-  //   "socially-engineered-attacks": "https://www.youtube.com/watch?v=uMkOphesrqI",
+    "socially-engineered-attacks": "https://www.youtube.com/watch?v=uMkOphesrqI",
    
-  //   "data-security-risks": "https://www.youtube.com/watch?v=UpkqXK0B2E0", 
+    "data-security-risks": "https://www.youtube.com/watch?v=UpkqXK0B2E0", 
     
-  //   "your-responsibilities": "https://www.youtube.com/watch?v=E9pHJRRfAhw", 
+    "your-responsibilities": "https://www.youtube.com/watch?v=E9pHJRRfAhw", 
    
-  //   "more-information": "https://www.youtube.com/watch?v=jq_LZ1RFPfU&list=PLOspHqNVtKADkWLFt9OcziQF7EatuANSY&index=1", 
-  // };
+    "more-information": "https://www.youtube.com/watch?v=jq_LZ1RFPfU&list=PLOspHqNVtKADkWLFt9OcziQF7EatuANSY&index=1", 
+  };
 
-  // const videoUrl = videoUrls[videoId];
+  const videoUrl = videoUrls[videoId];
   // const videoJsOptions = {
   //   autoplay: true,
   //   controls: true,
@@ -53,27 +53,27 @@ const VideoPage = () => {
 
 
   
-  // const navigate = useNavigate();
-  // const handleNextVideo = () => {
-  //   const videoIndex = Object.keys(videoTitles).indexOf(videoId);
-  //   const nextIndex = (videoIndex + 1) % Object.keys(videoTitles).length;
-  //   const nextVideoId = Object.keys(videoTitles)[nextIndex];
-  //   navigate(`/video/${nextVideoId}`);
-  // };
+  const navigate = useNavigate();
+  const handleNextVideo = () => {
+    const videoIndex = Object.keys(videoTitles).indexOf(videoId);
+    const nextIndex = (videoIndex + 1) % Object.keys(videoTitles).length;
+    const nextVideoId = Object.keys(videoTitles)[nextIndex];
+    navigate(`/video/${nextVideoId}`);
+  };
   
-  // const handlePrevVideo = () => {
-  //   const videoIndex = Object.keys(videoTitles).indexOf(videoId);
-  //   if (videoIndex === 0) {
-  //     navigate("/menu"); 
-  //   } else {
-  //     const prevIndex = videoIndex - 1;
-  //     const prevVideoId = Object.keys(videoTitles)[prevIndex];
-  //     navigate(`/video/${prevVideoId}`);
-  //   }
-  // };
-  // const handlePolicyPage = () => {
-  //   navigate("/policy"); 
-  // };
+  const handlePrevVideo = () => {
+    const videoIndex = Object.keys(videoTitles).indexOf(videoId);
+    if (videoIndex === 0) {
+      navigate("/menu"); 
+    } else {
+      const prevIndex = videoIndex - 1;
+      const prevVideoId = Object.keys(videoTitles)[prevIndex];
+      navigate(`/video/${prevVideoId}`);
+    }
+  };
+  const handlePolicyPage = () => {
+    navigate("/policy"); 
+  };
 
 
 
@@ -89,7 +89,7 @@ const VideoPage = () => {
       <div className="background-page">
         <div className="video-bg">
           <ReactPlayer
-            url="https://www.youtube.com/watch?v=kmJlnUfMd7I"
+            url={videoUrl}
             width="70vw"
             height="800px"
             controls
@@ -102,10 +102,10 @@ const VideoPage = () => {
         </div>
       </div>
       <Footer
-        // backClick={handlePrevVideo}
-        // nextClick={
-        //   videoTitle === "More Information" ? handlePolicyPage : handleNextVideo
-        // } 
+        backClick={handlePrevVideo}
+        nextClick={
+          videoTitle === "More Information" ? handlePolicyPage : handleNextVideo
+        } 
       />
     </div>
   );
